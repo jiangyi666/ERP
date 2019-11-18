@@ -1,0 +1,77 @@
+/*reset*/
+ul, ol, menu{list-style: none;margin: 0;padding: 0;}
+blockquote, q{quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after{content: '';content: none;}
+table{border-collapse: collapse;border-spacing: 0;}
+fieldset, a img, iframe{border: 0 none;}
+address, em, i{font-style: normal;}
+abbr, acronym{font-variant: normal;}
+hr{display: block;height: 1px;border: 0;border-top: 1px solid #cccccc;margin: 1em 0;padding: 0;}
+input, select, button{vertical-align: middle;}
+input, textarea, select{*font-size: 100%;}
+button{overflow: visible;}
+button::-moz-focus-inner, input[type=reset]::-moz-focus-inner, input[type=button]::-moz-focus-inner, input[type=submit]::-moz-focus-inner, input[type=file] > input[type=button]::-moz-focus-inner{border: 0 none;padding: 0;}
+:active{outline: 0 none;}
+
+
+body{font-size: 12px; font-family: "Microsoft YaHei", "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", Tahoma, Arial, STHeiti, sans-serif;_font-family: Tahoma, Arial, Helvetica, STHeiti, sans-serif;color: #333333;}
+a{text-decoration: none;}
+a:hover{text-decoration: underline;}
+/*main css*/
+.main-im{ position:fixed; left: 2px; top:150px;  z-index: 1000000;width: 110px; height: 140px; }
+.main-im .qq-a { display: block; width: 106px; height: 116px; font-size: 14px; color: #0484cd; text-align: center; position: relative; }
+.main-im .qq-a span { bottom: 5px; position: absolute; width: 90px; right: 10px; }
+.main-im .qq-hover-c { width: 70px; height: 70px; border-radius: 35px; position: absolute; left: 18px; top: 10px; overflow: hidden; z-index: 999; }
+.main-im .qq-container { z-index: 9999; position: absolute; width: 109px; height: 118px; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom: 1px solid #dddddd; background: url(../Images/qq/qq-icon-bg.png) no-repeat center 8px; }
+.main-im .img-qq {max-width: 60px; display: block; position: absolute; left: 6px; top: 3px; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s; }
+.main-im .im-qq:hover .img-qq{ max-width: 70px; left: 1px; top: 8px; position: absolute; }
+
+.main-im .im_main {background: #F9FAFB; border: 1px solid #dddddd; border-radius: 10px; background: #F9FAFB; display:none;}
+.main-im .im_main .im-tel ,.main-im .im_main .im-proxy{ color: #000000; text-align: center; width: 108px; height: 65px; border-bottom: 1px solid #dddddd; overflow:hidden; }
+.main-im .im_main .im-tel div{font-weight:bold;font-size: 12px;line-height:24px; text-align: center;}
+.main-im .im_main .im-tel .tel-num { font-family: Arial; font-weight: bold; color: #e66d15; line-height:24px;}
+.main-im .im_main .im-tel:hover { background: #fafafa; }
+
+/*add 招商合作*/
+.main-im .im_main .im-proxy{height: auto;}
+.main-im .im_main .im-proxy h3{  background:#e4e4e4;font-size: 12px;margin-top:0; }
+.main-im .im_main .im-proxy ul {
+ margin:0;
+ padding:0;
+}
+.main-im .im_main .im-proxy ul li {
+ float:left;
+ line-height:24px;
+ font:12px/1.5em "微软雅黑";
+ color:#666;
+ margin:0;
+ padding:0px;
+}
+.main-im .im_main .im-proxy ul li span{
+    display:inline-block;
+      
+}
+.main-im .im_main .weixing-container {width: 55px; height: 47px;  background: #f5f5f5; border-bottom-left-radius: 10px; background: url(../Images/qq/weixing-icon.png) no-repeat center center;float:left;}
+.main-im .im_main .weixing-show {width: 108px; height: 172px; background: #ffffff; border-radius: 10px; border: 1px solid #dddddd; position: absolute; left: 0; top: 50px; }
+/*
+.main-im .im_main .weixing-show .weixing-sanjiao {width:0; height: 0; border-style: solid; border-color: transparent transparent transparent #ffffff; border-width: 6px; left: 112px; top: 134px; position: absolute; z-index: 999;}
+.main-im .im_main .weixing-show .weixing-sanjiao-big { width: 0; height: 0; border-style: solid; border-color: transparent transparent transparent #dddddd; border-width: 8px; left: 112px; top: 132px; position: absolute; }
+*/
+.main-im .im_main .weixing-show .weixing-ma { width: 104px; height: 103px; padding-left: 2px; padding-top: 5px; }
+.main-im .im_main .weixing-show .weixing-txt{position:absolute; top:110px;left:7px;width:100px;margin:0 auto; text-align:center; line-height:26px;}
+.main-im .im_main .go-top { width: 50px; height: 47px; background: #f5f5f5; border-bottom-right-radius: 10px; float:right; line-height:22px; text-align:center;}
+.main-im .im_main .go-top a { display: block; width: 52px; height: 47px; }
+.main-im .close-im { position: absolute; right: 10px; top: -12px; z-index: 10000; width: 24px; height: 24px; }
+.main-im .close-im a { display: block; width: 24px; height: 24px; background: url(../Images/qq/close_im.png) no-repeat left top; }
+.main-im .close-im a:hover { text-decoration: none; }
+.main-im .open-im { cursor: pointer; margin-left: 0px; width: 40px; height: 133px; background: url(../Images/qq/open_im.png) no-repeat left top;}
+
+
+.qqkefu{ width:108px; height:100px;  font-size: 12px; color: #333; line-height:24px;text-align:left; border-bottom: solid 1px #E6E4E4;}
+.qqkefu ul {padding:5px; margin:0 auto; width:70px; }
+.qqkefu ul li { line-height: 30px; height:30px;overflow: hidden;}
+.qqkefu ul li span { color: #555; font: 12px/2em "微软雅黑";}
+.qqkefu ul li a{color: #555;}
+.qqkefu ul li img { vertical-align: middle; float:left; margin-top:3px;}
+
+

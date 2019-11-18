@@ -1,0 +1,19 @@
+#footer{
+    margin-top: 10px;
+    width: 100%;
+    height: 200px;
+    background:gray;
+    opacity: 0.5;
+}
+a.a1:link{
+    color: black;
+    text-decoration: none;
+    font-family: 宋体;
+    size: 5px;
+}
+a.a1:hover{
+    color:red;
+    text-decoration: none;
+    font-family: 宋体;
+    size: 5px;
+}

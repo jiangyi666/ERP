@@ -1,0 +1,165 @@
+@charset "utf-8";
+/* CSS Document */
+.warpbox {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 135px;
+	padding: 20px 0;
+	background: #f4f5f7;
+}
+.orderbox {
+	height: 114px;
+	overflow: hidden;
+	position:relative;
+}
+.orderbox strong {
+	font: 22px/36px "微软雅黑";
+	color: #333;	font-weight: normal;
+	padding: 39px 0 39px 20px;
+	float: left;
+}
+
+/***红色层**/
+.hboxtop { width: 500px; height: 30px; position:absolute; left: 710px; top: 58px; z-index: 3;}
+.hboxtop a{display:block; width:24px; height:24px; background:#bbb; border-radius:15px; padding:0; font: 14px/24px "微软雅黑"; color:#fff; text-decoration:none; text-align: center; position: absolute; top: -27px; z-index: 5; }
+#orderd1 { left: 3px;background: #e60000;}
+#orderd2 { left: 218px;}
+#orderd3 { left: 433px;}
+.on_ordered{ background: #e60000 !important;}
+.hboxtop span {display: block;width: 100px; height: 4px; background: #e60000; position: absolute; left: 15px; top: -17px; z-index: 3;}
+.hboxtop span.span1{ width: 100px;}
+.hboxtop span.span2{ width: 320px;}
+/*	
+	#orderd22 { left: 218px; background: #e60000;}
+	.hboxdown_R span{ display: block; width: 200px; height: 4px; background: #e60000; position: absolute; left: 15px; top: -17px; z-index: 2;}
+*/
+
+/***灰色层**/
+.hboxdown { width: 500px; height: 30px; position:absolute; left: 710px; top: 28px; z-index: 0; }
+.hboxdown a { display: block;  width: 30px; height: 30px; background: #d5d5d5; border-radius: 15px; padding: 0; position: absolute; top: 0; z-index: 0; }
+#ordert1 { left: 0px; }
+#ordert2 { left: 215px; }
+#ordert3 { left: 430px; }
+.hboxdown span { display: block; width: 430px; height: 4px; border: 3px #d5d5d5 solid; background: #bbb; position: absolute; left: 15px; top: 10px; z-index: 0; }
+
+/***文字层**/
+.hboxcon { width: 500px; height: 30px; position:absolute; left: 710px; top: 75px; z-index: 0; }
+.hboxcon a { display: block; width: 100px; height: 24px; float: left; position: absolute; top: -10px; }
+#orderc1 {left: -15px;}
+#orderc2 {left: 195px;}
+#orderc3 {left: 407px;}
+
+
+
+.tab_box1{ height:35px; border:1px #ddd solid; background:#f4f5f7; color:#666;}
+.tab_box1 span{ display:block; float:left; font:14px/35px "微软雅黑"; color:#666; padding-left:25px; }
+.spn1{ width:80px; }
+.spn2{ width:723px; }
+.spn3{ width:90px; }
+.tab_box2 {min-height: 350px;}
+
+.tab_box2 li {height: 135px; border: 0; border-bottom: 1px #ddd solid;}
+.tab_box2 li.tablist_bg { background: #eee;}
+.tab_box2 li div{float:left; margin: 25px 0 0; }
+
+.tab_num {padding-left: 25px; width:80px;}
+.tab_pic{width:90px;}
+.tab_pic img{width:90px; height:51px;}
+.tab_con {font: 14px/20px "微软雅黑"; padding-left: 24px; width:636px;}
+
+
+.tab_con1 {font: 14px/20px "微软雅黑"; padding-left: 24px; width:426px;}
+.tab_con a {float: left; width: 100%; color: #2d6fa1;}
+.tab_con span {float: left; width: 100%; color: #999; }
+.tab_pri, .tab_fav{ width:120px; /*padding-left:25px;*/}
+.tab_pri { color: #666; }
+.tab_fav {color: #999; text-align:center; }
+.tab_fav span{max-width:59px;overflow:hidden;display:inline-block; line-height:11px; }
+ .tab_han{  padding-left:15px; }
+.tab_han a {color: #999; }
+
+.tab_box3 {height: 80px;background: #f4f5f7;}
+.tab_box3L {
+	width: 1000px;
+	float: left;
+	padding-left: 20px;
+	font: 14px/80px "微软雅黑";
+	color: #666;
+}
+.tab_box3L a {
+	padding-left: 20px;
+}
+.tab_box3L span {
+	float: right;
+	padding-right: 40px;
+}
+.tab_box3L span em{ font: 20px/80px "微软雅黑"; color:#f00;}
+.tab_box3R {
+	width: 180px;
+	float: right;
+}
+.tab_box3R a {
+	display: block;
+	float: right;
+	width: 180px;
+	height: 40px;
+	margin: 0;
+	padding: 20px 0;
+	text-align: center;
+	background: #e60000;
+	color: #fff;
+	font: 24px/40px "微软雅黑";
+}
+
+/**订单确认样式**/
+.tab_num2 { width:30px;}
+.tab_box4{width:300px; float:right; padding:20px 10px 20px 0;}
+.tab_box4 span{ display:block; width:300px; height:30px; float:right; text-align:right; font: 14px/30px "微软雅黑"; color:#999; }
+.tab_box4 span em{color:#f00; font-style:normal; font-size:16px;}
+.tab_box4 span a{ color:#2d6fa1}
+.order3{ min-height:300px; text-align:center; margin-top:160px;}
+.order3 h2{ font-size:22px; color:#333;font-weight: normal;}
+.order3 h2 img{ margin-right:20px;}
+.order3 a{ font-size:14px; color:#999;}
+/*底部推荐课程*/
+.w_bar h2 {
+	width: 1200px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	color: #333;
+	font-weight: normal;
+	margin: 10px 0;
+}
+.w_box dl dd.text_center {
+	width: 222px;
+	text-align:center;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+.w_box dl dd em{ color:#e50000; font-style:normal;}
+/*支付*/
+.payout{ background:#f4f5f7; border-top:1px solid #dddddd; font-size:14px; color:#666; margin-bottom:20px; padding-bottom:30px;}
+.payout p{ margin:30px 20px 0px;}
+.payout .paystyle{font-size:16px; color:#333;}
+.payout .paystyle input{  width:15px; height:15px; margin-right:10px;}
+.payout p span{ margin-right:30px;}
+.payout p font{color:#e50000;}
+.payoff{ padding-left:20px;}
+.payoff p{font-size:16px; color:#333; margin:20px 0px;}
+.payoff label{font-size:14px; margin-left:57px; margin-right:10px;}
+
+.payoff input{ border:1px solid #dddddd; font-size:14px; color:#666; height:25px;line-height:25px; padding-left:5px; width:180px;}
+
+.payoff .tab_box3R{ float: none; margin-top:30px; margin-left:140px;}
+.payoff  .tab_box3R a {
+
+	height: 50px;
+	margin-bottom:100px;
+	padding: 0;
+	text-align: center;
+	background: #e60000;
+	color: #fff;
+	font: 22px/50px "微软雅黑";
+}

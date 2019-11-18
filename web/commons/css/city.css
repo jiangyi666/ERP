@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/*public*/
+.clearfix:after{visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+/*html,body,form,input,select,textarea,div,p,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;}*/
+ul,li,dl,dt,dd{list-style:none;}
+
+button,input{background:#fff;border:none;}
+.clear{clear:both;}
+.thRelative{position:relative;left:0;top:0;}
+.thLeft{float:left;}
+.thRight{float:right;}
+.size_14{font-size:14px;}
+
+.lineSearch{float:left; margin-top:3px;}
+.lineSearch ul,.lineSearch li,.lineSearch dl,.lineSearch dt,.lineSearch dd{margin:0;padding:0;float:left;}
+/*boxSearch*/
+.lineSearch li .boxSearch,.lineSearch li .boxSearchHover{position:relative; width:55px; overflow:hidden; padding-left:7px;color:#666;height:40px;border:1px solid #188eee;border-right-width:0;border-bottom-left-radius:3px;
+	border-top-left-radius: 3px;line-height:31px;cursor:pointer;}
+.lineSearch li .manage{width:120px;border-right-color:#188eee;padding-left:3px;}
+.lineSearch li .boxSearchHover{z-index: 2001;border:1px solid #188eee;border-right-width:0;}
+.lineSearch li .manage.boxSearchHover{z-index: 2001;border:1px solid #188eee;}
+.boxSearch .key_word{position: absolute;left:10px;top:3px;line-height:32px;color:#666; font-size:14px;}
+.boxSearch .ico_shBlue{margin-top:7px;width:12px;height:17px;display: inline-block;background-position:left -165px;}
+.boxSearch .btn_search,.boxSearch .btn_search_current{background-position:6px -186px;width: 10px;height: 5px;margin-top: 5px;right:5px; padding: 9px 5px;_padding: 9px 5px 0;}
+.lineSearch li .manage .btn_search,.lineSearch li .manage .btn_search_current{padding: 9px 4px;_padding: 9px 4px 0;}
+
+.boxSearch .btn_search_current{background-position:6px -202px;}
+.lineSearch li .manage1{ width:355px;border-top-color:#188eee;padding:5px 10px;top:30px;}
+.lineSearch li .manage1 dd a{display:inline-block; margin-right:7px;}
+.search_form_suggest{border:1px solid #4abcf8;border-radius:3px; position:absolute;top:50px;left:0;z-index:978;background:#fff;}
+.search_form_suggest:before{content:"";position: absolute;top:-6px; left:25px;
+ border-bottom:5px solid #4abcf8;
+ border-right:7px solid transparent;
+ border-left:7px solid transparent;}
+.search_form_suggest h3{font-size:12px;font-weight:normal;height:20px;line-height:20px;padding:0 0 5px 10px;color:#ff6f00;border-bottom:1px solid #e6e6e6;margin-bottom:4px;}
+.btn_close{cursor:pointer;background-position:-50px -2px;width:16px;height:16px;text-indent:-9999px;overflow:hidden;_text-indent:0;_font-size:0;_line-height:0;}
+.btn_close:hover{background-position:-50px -28px;}
+.search_hotList dd{line-height:35px;width:62px;text-align:center;font-size:14px;letter-spacing:5px; }
+.search_hotList dd a{word-break:break-all;white-space:nowrap;display:block;border-bottom:1px solid #dbf1fe;}
+.search_hotList dd a:hover{background:#e7f4fd; }
+.select_city_box{background:#FBFBFB;border-top:1px solid #E5E5E5;border-bottom:1px solid #E5E5E5;padding:13px 0px;}
+.select_city_box span{color:#888;}
+.select_city_box .input_city{width: 170px;border: 1px solid #C1C1C1;background: #FFF;padding: 5px 8px;font: 12px/14px ;vertical-align: middle;}
+.search_city_result {line-height: 24px;margin: 10px 0 -5px 0px;height: 24px;}
+.search_city_result a{color: #188eee;}
+.tab_select dl{padding: 5px 0;}
+.tab_select dt{width: 46px;background: #FE984F;font: bold 12px/22px ;color: #fff;text-align: center;}
+.tab_select dd{line-height: 22px;width: 305px;_width: 300px;}
+.tab_select dd a{color: #888;margin-left: 7px;display: inline-block;}
+/*lineSearchbg*/
+.lineSearchbg{border:1px solid #188eee;border-left-width:0;border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px;height:40px;line-height:40px;width:330px;}
+.lineSearchbg .ico_serGray{width:18px;height:18px;background-position:8px -52px;padding:7px 5px 0 8px;}
+.lineSearchbg input{font-size:14px;border: 0;padding: 10px 5px 1px;width:170px;color: #b5b5b5;background: #fff;font-family: "Microsoft Yahei", Arial, "微软雅黑";}
+.lineSearchbg a.btn_search{background:#188eee; height: 41px;display: inline-block;width: 60px;position: absolute;right:0px;top:-1px;}
+.ico{background: url(/exam/img/sicon_v5.png) no-repeat;background-position:0 0; width:40px; height:40px; position:absolute; right:10px; top:5px;}
+
+.btn{color: #b5b5b5;}
+/*.lineSearchbg a.btn_search:hover{background-position:0 -125px;text-decoration:none;}
+*/
