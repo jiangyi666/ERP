@@ -10,4 +10,10 @@ public interface DeptService {
      * @return
      */
     public List<Dept> getAllDept();
+    /**
+     * 根据部门名获得部门编号
+     * @param deptName
+     * @return
+     */
+    public String getDeptIdByDeptName(String deptName);
 }

@@ -92,7 +92,7 @@
     <div class="row clearfix">
         <div class="col-md-12 column">
             <h3 class="text-center text-info">
-                职工列表 <a type="button" href="<%=basePath%>/createTitle.jsp" class="btn btn-success">添加职工</a>
+                职工列表 <a type="button" href="<%=basePath%>/toCreateEmp.do" class="btn btn-success" target="_blank">添加职工</a>
             </h3>
         </div>
     </div>

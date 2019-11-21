@@ -28,4 +28,15 @@ public interface EmployeeService {
      * @param employeeId
      */
     public void deleteEmployeeById(String employeeId);
+    /**
+     * 添加新的职工
+     * @param employee
+     */
+    public void addEmployee(Employee employee);
+    /**
+     * 用来查看一个职工编号是否已经存在
+     * @param employeeId
+     * @return
+     */
+    public boolean checkEmpIdIsExist(String employeeId);
 }

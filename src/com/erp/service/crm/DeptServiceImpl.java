@@ -12,4 +12,14 @@ public class DeptServiceImpl implements DeptService {
     public List<Dept> getAllDept() {
         return deptDao.getAllDept();
     }
+
+    /**
+     * 根据部门名称获得部门编号
+     * @param deptName
+     * @return
+     */
+    @Override
+    public String getDeptIdByDeptName(String deptName) {
+        return deptDao.getDeptIdByDeptName(deptName);
+    }
 }

@@ -172,8 +172,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
             preparedStatement.setString(3,employee.getPassword());
             preparedStatement.setString(4,employee.getDeptId());
             preparedStatement.setString(5,employee.getHeadship());
-            preparedStatement.setDouble(5,employee.getSalary());
-            preparedStatement.setInt(5,employee.getPrivilege());
+            preparedStatement.setDouble(6,employee.getSalary());
+            preparedStatement.setInt(7,employee.getPrivilege());
             preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -200,7 +200,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
             if (resultSet.next()) {
                 //有查询到数据
 //              empId=resultSet.getString("employeeId");
-                return true;
+                return true;//如果存在就返回true
             } else {
                 return false;
             }

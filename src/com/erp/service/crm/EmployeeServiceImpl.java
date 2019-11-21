@@ -42,4 +42,23 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void deleteEmployeeById(String employeeId) {
         employeeDao.deleteEmployeeById(employeeId);
     }
+
+    /**
+     * 添加新的职工
+     * @param employee
+     */
+    @Override
+    public void addEmployee(Employee employee) {
+        employeeDao.addEmployee(employee);
+    }
+
+    /**
+     *用来检测一个员工号是否已经存在
+     * @param employeeId
+     * @return
+     */
+    @Override
+    public boolean checkEmpIdIsExist(String employeeId) {
+        return employeeDao.checkEmpIdIsExist(employeeId);
+    }
 }
