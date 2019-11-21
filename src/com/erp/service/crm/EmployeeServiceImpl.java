@@ -16,4 +16,30 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<Employee> getAllEmployee() {
         return employeeDao.getAllEmployee();
     }
+    /**
+     * 通过员工的编号来获得职工的信息
+     * @param employeeId
+     * @return
+     */
+    @Override
+    public Employee getEmployeeById(String employeeId) {
+        return employeeDao.getEmployeeById(employeeId);
+    }
+    /**
+     * 根据employeeId来更新员工信息
+     * @param employee
+     */
+    @Override
+    public void updateEmployeeById(Employee employee) {
+        employeeDao.updateEmployeeById(employee);
+    }
+
+    /**
+     * 根据职工ID来删除职工
+     * @param employeeId
+     */
+    @Override
+    public void deleteEmployeeById(String employeeId) {
+        employeeDao.deleteEmployeeById(employeeId);
+    }
 }

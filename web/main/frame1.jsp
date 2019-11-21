@@ -1,8 +1,10 @@
+<%@ page import="com.erp.pojo.crm.Employee" %>
 <%@page contentType="text/html; charset=UTF-8" language="java" %>
 <%@page pageEncoding="UTF-8" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+    Employee employee = (Employee) session.getAttribute("employee");
 %>|
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +34,7 @@
     </script>
 </head>
 <body>
-<button class="btn-danger" onclick="null"><span class="glyphicon glyphicon-flag"></span><%=session.getAttribute("employeeName")%></button>
+<button class="btn-danger" onclick="null"><span class="glyphicon glyphicon-flag"></span><%=employee.getEmployeeName()%></button>
 <button class="btn-block btn-danger btn-lg" id="btn1">系统维护<span class="glyphicon glyphicon-th-list"></span></button>
 <div class="panel-warning" id="div0" hidden>
     <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span> <a href="<%=basePath%>main" target="_blank" style="text-decoration: none">部门管理</a> </div>

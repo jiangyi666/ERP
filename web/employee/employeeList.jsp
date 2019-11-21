@@ -1,10 +1,15 @@
+<%@ taglib prefix="for" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="com.erp.pojo.crm.PageResult" %>
 <%@ page import="com.erp.pojo.crm.Employee" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.erp.pojo.crm.Dept" %>
+<%@ page import="java.util.Map" %><%--
   Created by IntelliJ IDEA.
   User: lenovo
   Date: 2019/11/18
   Time: 21:39
+
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
@@ -14,6 +19,11 @@
 %>
 <%
     PageResult pageResult = (PageResult) request.getAttribute("pageResult");
+    List<Dept> deptList = (List<Dept>) request.getAttribute("deptList");
+    session.setAttribute("deptList", deptList);
+    //拿到权限职务列表
+    Map privilegeMap = (Map) request.getAttribute("privilegeMap");
+    session.setAttribute("map", privilegeMap);//把权限职务列表放进session中方便下面遍历
 %>
 <%--使用formdata来上传文件一定要注明该注释为html5--%>
 <!DOCTYPE HTML>
@@ -30,6 +40,51 @@
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
         <%@ include file="pagination.js" %>
+    </script>
+    <script type="text/javascript">
+        function modifyEmployee(id) {
+            var deptId;
+            $.ajax({
+                type: "get",
+                url: "<%=basePath%>getEmployeeById.do",
+                data: {"employeeId": id},
+                dataType: "json",
+                success: function (data) {
+                    $("#employeeId").val(data.employeeId);
+                    $("#employeeName").val(data.employeeName);
+                    $("#deptName").val(data.deptName);
+                    $("#headship").val(data.headship);
+                    $("#salary").val(data.salary);
+                    deptId = data.deptId;
+                }
+            });
+        }
+
+        function updateEmployee() {
+            $.post("<%=basePath%>updateEmployeeById.do", $("#modifyTitle_from").serialize(), function (data) {
+                if (data == 'false') {
+                    alert("没有权限更改！请联系总经理！")
+                }
+                if (data == 'ok') {
+                    alert("职工信息更新成功！");
+                }
+                window.location.reload();
+            });
+        }
+
+        function deleteEmployee(id) {
+            if (confirm('确实要删除该职工吗?')) {
+                $.post("<%=basePath%>deleteEmployeeById.do", {"employeeId": id}, function (data) {
+                    if (data == 'false') {
+                        alert("没有权限删除！请联系总经理！")
+                    }
+                    if (data == 'ok') {
+                        alert("职工删除更新成功！");
+                    }
+                    window.location.reload();
+                });
+            }
+        }
     </script>
 </head>
 <body>
@@ -59,7 +114,6 @@
                     </thead>
                     <tbody>
                     <%
-                        //添加图书列表到集合类list中
                         List<Employee> list = pageResult.getList();
                         Employee employee = null;
                         for (int i = 0; i < list.size(); i++) {
@@ -86,11 +140,11 @@
                             <button type="button"
                                     data-toggle="modal"
                                     data-target="#modifyTitleModal"
-                                    class="btn  btn-success" onclick="modifyTitle('<%=employee.getEmployeeId()%>')">
+                                    class="btn  btn-success" onclick="modifyEmployee('<%=employee.getEmployeeId()%>')">
                                 修改
                             </button>
                             <button type="button"
-                                    class="btn btn-danger" onclick="deleteTitle('<%=employee.getEmployeeId()%>')">
+                                    class="btn btn-danger" onclick="deleteEmployee('<%=employee.getEmployeeId()%>')">
                                 删除
                             </button>
                         </td>
@@ -137,45 +191,59 @@
                 <form class="form-horizontal" id="modifyTitle_from">
                     <%--<input type="hidden" id="edit_cust_id" name="cust_id"/>--%>
                     <div class="form-group">
-                        <label for="titleNumber" class="col-sm-2 control-label">课程代码</label>
+                        <label for="employeeId" class="col-sm-2 control-label">职工编号</label>
                         <div class="col-sm-10">
-                            <input type="text" readonly class="form-control" id="titleNumber" placeholder="课程代码"
-                                   name="titleNumber">
+                            <input type="text" readonly class="form-control" id="employeeId" placeholder="编号"
+                                   name="employeeId">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="titleName" class="col-sm-2 control-label">课程名称</label>
+                        <label for="employeeName" class="col-sm-2 control-label">姓名</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="titleName" placeholder="课程名称"
-                                   name="titleName"/>
+                            <input type="text" class="form-control" id="employeeName" placeholder="姓名"
+                                   name="employeeName"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="titleSchool" class="col-sm-2 control-label">开课学校</label>
+                        <label for="deptName" class="col-sm-2 control-label">部门</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="titleSchool" placeholder="开课学校"
-                                   name="titleSchool">
+                            <%--<input type="text" class="form-control" id="deptName" placeholder="部门"--%>
+                            <%--name="deptName">--%>
+                            <select class="form-control" id="deptName" name="deptName">
+                                <option value="">--请选择--</option>
+                                <c:forEach items="${deptList}" var="dept">
+                                    <option value="${dept.deptname}">${dept.deptname}</option>
+                                </c:forEach>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="titleTeacher" class="col-sm-2 control-label">开课教师</label>
+                        <label for="headship" class="col-sm-2 control-label">职务</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="titleTeacher" placeholder="开课教师"
-                                   name="titleTeacher">
+                            <%--<input type="text" class="form-control" id="headship" placeholder="职务"--%>
+                            <%--name="headship">--%>
+                            <select class="form-control" id="headship" name="headship">
+                                <option value="">--请选择--</option>
+                                <c:forEach items="${map}" var="entry">
+                                    <option value="<c:if test="${not empty entry.key}">${entry.key}</c:if>">
+                                        <c:if test="${not empty entry.key}">${entry.key}</c:if>
+                                    </option>
+                                </c:forEach>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="titleScore" class="col-sm-2 control-label">课程学分</label>
+                        <label for="salary" class="col-sm-2 control-label">薪水</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="titleScore" placeholder="课程学分"
-                                   name="titleScore">
+                            <input type="text" class="form-control" id="salary" placeholder="薪水"
+                                   name="salary">
                         </div>
                     </div>
             </div>
             </form>
         </div>
         <div class="modal-footer">
-            <button type="button" id="modifyTitle" class="btn btn-success" onclick="updateTitle()">确认修改</button>
+            <button type="button" id="modifyTitle" class="btn btn-success" onclick="updateEmployee()">确认修改</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
             <%--<button type="button" class="btn btn-primary" onclick="updateCustomer()">保存修改</button>--%>
         </div>

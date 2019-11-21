@@ -10,4 +10,22 @@ public interface EmployeeService {
      * @return
      */
     public List<Employee> getAllEmployee();
+    /**
+     * 通过员工的编号来获得职工的信息
+     * @param employeeId
+     * @return
+     */
+    public Employee getEmployeeById(String employeeId);
+
+    /**
+     * 根据employeeId来更新员工信息
+     * @param employee
+     */
+    public void updateEmployeeById(Employee employee);
+
+    /**
+     * 根据职工ID来删除职工
+     * @param employeeId
+     */
+    public void deleteEmployeeById(String employeeId);
 }

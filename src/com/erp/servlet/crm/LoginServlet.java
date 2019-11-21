@@ -14,8 +14,9 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
         Employee employee = loginService.checkEmployee(employeeId, password);
         if(employee!=null)
         {
-            //即登录成功！
-            request.getSession().setAttribute("employeeName",employee.getEmployeeName());
+            //即登录成功！，将登录成功的用户的信息保存到session中以供其他使用
+            //employee中保存有姓名，部门，职位，特权代码
+            request.getSession().setAttribute("employee",employee);
             request.getRequestDispatcher("/main/home.jsp").forward(request, response);
         }else {
             //登录失败，就重新登录

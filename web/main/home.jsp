@@ -20,7 +20,8 @@
     <link href="<%=basePath%>commons/css/footer.css" rel="stylesheet">
 </head>
 <body>
-<img src="<%=basePath%>commons/image/main_image/header.jpg" width="100%">
+<%--<img src="<%=basePath%>commons/image/main_image/header.jpg" width="100%">--%>
+<div style="text-align: center;background-color: gainsboro"><font style="text-align: center;color: black;font-size: xx-large"><b>纸业销售ERP系统</b></font></div>
 <div class="panel-danger">
     <div class="panel-heading">
         <ul class="nav nav-pills">
@@ -43,25 +44,25 @@
 <br>
 <br>
 <br>
-<div id="footer">
-    <font style="color: white;font-family: 仿宋" size="5">
-        <span class="glyphicon glyphicon-envelope"></span>
-        联系：<br>jy350@icloud.com
-    </font></b>
-    <div style="float: right">
-        <p><font color="black" style="font-family: 华文行楷" size="4"><span class="glyphicon glyphicon-share-alt"></span>
-            友情链接</font></p>
-        <p><a class="a1" href="http://www.fjnu.edu.cn/"><span class="glyphicon glyphicon-asterisk"></span> 福建师范大学网站</a>
-        </p>
-        <p><a class="a1" href="http://cpc.people.com.cn/"><span class="glyphicon glyphicon-asterisk"></span>人民网</a></p>
-    </div>
-    <div style="text-align: center">
-        <br><br><br><br>
-        <font color="black" style="font-family: 华文行楷" size="4">版权所有</font>
-        <span class="glyphicon glyphicon-copyright-mark"></span>
-        <font color="black" style="font-family: -apple-system" size="4">Designed By JiangYi In FJNU.2018</font>
-    </div>
+<%--<div id="footer">--%>
+    <%--<font style="color: white;font-family: 仿宋" size="5">--%>
+        <%--<span class="glyphicon glyphicon-envelope"></span>--%>
+        <%--联系：<br>jy350@icloud.com--%>
+    <%--</font></b>--%>
+    <%--<div style="float: right">--%>
+        <%--<p><font color="black" style="font-family: 华文行楷" size="4"><span class="glyphicon glyphicon-share-alt"></span>--%>
+            <%--友情链接</font></p>--%>
+        <%--<p><a class="a1" href="http://www.fjnu.edu.cn/"><span class="glyphicon glyphicon-asterisk"></span> 福建师范大学网站</a>--%>
+        <%--</p>--%>
+        <%--<p><a class="a1" href="http://cpc.people.com.cn/"><span class="glyphicon glyphicon-asterisk"></span>人民网</a></p>--%>
+    <%--</div>--%>
+    <%--<div style="text-align: center">--%>
+        <%--<br><br><br><br>--%>
+        <%--<font color="black" style="font-family: 华文行楷" size="4">版权所有</font>--%>
+        <%--<span class="glyphicon glyphicon-copyright-mark"></span>--%>
+        <%--<font color="black" style="font-family: -apple-system" size="4">Designed By JiangYi In FJNU.2018</font>--%>
+    <%--</div>--%>
 
-</div>
+<%--</div>--%>
 </body>
 </html>
