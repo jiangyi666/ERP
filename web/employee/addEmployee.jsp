@@ -25,18 +25,26 @@
 
     <script type="text/javascript">
         function addEmployee() {
-            $.post("<%=basePath%>addEmployee.do", $("#addEmployee_from").serialize(), function (data) {
-                if (data=='ok')
-                {
-                    alert("添加新职工成功！")
-                }
-                if (data=='false')
-                {
-                    alert("该员工号已经存在！请再次输入！")
-                }
+            //做为空判断
+            if($("#employeeId").val()!=''&$("#employeeName").val()!=""
+                &$("#password").val()!=""&$("#deptName").val()!=""
+            &$("#headship").val()!=""&$("#salary").val()!=""){
+                //不为空就提交
+                $.post("<%=basePath%>addEmployee.do", $("#addEmployee_from").serialize(), function (data) {
+                    if (data=='ok')
+                    {
+                        alert("添加新职工成功！")
+                    }
+                    if (data=='false')
+                    {
+                        alert("该员工号已经存在！请再次输入！")
+                    }
 
-                window.location.reload();
-            });
+                    window.location.reload();
+                });
+            }else {
+                alert("请填写好相关字段后再提交！")
+            }
         }
     </script>
 </head>
@@ -56,21 +64,21 @@
                     <label for="employeeId" class="col-sm-2 control-label">职工编号</label>
                     <div class="col-sm-10">
                         <input type="text" autofocus class="form-control" id="employeeId" placeholder="编号"
-                               name="employeeId">
+                               name="employeeId" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="employeeName" class="col-sm-2 control-label">姓名</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="employeeName" placeholder="姓名"
-                               name="employeeName"/>
+                               name="employeeName" required/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="password" class="col-sm-2 control-label">密码</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="password" placeholder="密码"
-                               name="password"/>
+                               name="password" required/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -78,7 +86,7 @@
                     <div class="col-sm-10">
                         <%--<input type="text" class="form-control" id="deptName" placeholder="部门"--%>
                         <%--name="deptName">--%>
-                        <select class="form-control" id="deptName" name="deptName">
+                        <select class="form-control" id="deptName" name="deptName" required>
                             <option value="">--请选择--</option>
                             <c:forEach items="${deptList}" var="dept">
                                 <option value="${dept.deptname}">${dept.deptname}</option>
@@ -91,7 +99,7 @@
                     <div class="col-sm-10">
                         <%--<input type="text" class="form-control" id="headship" placeholder="职务"--%>
                         <%--name="headship">--%>
-                        <select class="form-control" id="headship" name="headship">
+                        <select class="form-control" id="headship" name="headship" required>
                             <option value="">--请选择--</option>
                             <c:forEach items="${map}" var="entry">
                                 <option value="<c:if test="${not empty entry.key}">${entry.key}</c:if>">
@@ -105,7 +113,7 @@
                     <label for="salary" class="col-sm-2 control-label">薪水</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="salary" placeholder="薪水"
-                               name="salary">
+                               name="salary" required>
                     </div>
                 </div>
             </form>

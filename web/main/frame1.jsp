@@ -37,7 +37,7 @@
 <button class="btn-danger" onclick="null"><span class="glyphicon glyphicon-flag"></span><%=employee.getEmployeeName()%></button>
 <button class="btn-block btn-danger btn-lg" id="btn1">系统维护<span class="glyphicon glyphicon-th-list"></span></button>
 <div class="panel-warning" id="div0" hidden>
-    <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span> <a href="<%=basePath%>main" target="_blank" style="text-decoration: none">部门管理</a> </div>
+    <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span> <a href="<%=basePath%>getAllDept.do" target="_blank" style="text-decoration: none">部门管理</a> </div>
 </div>
 <div class="panel-warning" id="div1" hidden>
     <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span>  <a href="<%=basePath%>getAllEmployee.do" target="_blank" style="text-decoration: none">职工管理</a></div>

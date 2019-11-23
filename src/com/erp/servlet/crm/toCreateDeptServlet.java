@@ -13,12 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * 跳转到添加新职工界面
- * 携带有部门列表和现有职务列表
- */
-@WebServlet(name = "toCreateEmpServlet",urlPatterns = "/toCreateEmp.do")
-public class toCreateEmpServlet extends HttpServlet {
+@WebServlet(name = "toCreateDeptServlet",urlPatterns = "/toCreateDept.do")
+public class toCreateDeptServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
 
@@ -35,15 +31,10 @@ public class toCreateEmpServlet extends HttpServlet {
         if (privilege== FindPrivilegeByHeadship.getPrivilege("总经理"))
         {
             //如果有权限修改
-            //******将部门列表和现有职务列表返回给前端
-            DeptServiceImpl deptService = new DeptServiceImpl();
-            List<Dept> deptList = deptService.getAllDept();//或得部门列表
-            request.setAttribute("deptList",deptList);//将部门列表返回给前端jsp
-            request.setAttribute("privilegeMap", FindPrivilegeByHeadship.getMap());//将职务权限映射返回给前端
-            request.getRequestDispatcher("/employee/addEmployee.jsp").forward(request,response);//跳转到添加新职工界面
+            request.getRequestDispatcher("/employee/addDept.jsp").forward(request,response);//跳转到添加新职工界面
         }else {
-            //如果没有权限修改，就跳转回职工列表
-            request.getRequestDispatcher("/getAllEmployee.do").forward(request,response);
+            //如果没有权限增加，就跳转回职工列表
+            response.sendRedirect("getAllDept.do");
         }
 
     }

@@ -22,4 +22,42 @@ public class DeptServiceImpl implements DeptService {
     public String getDeptIdByDeptName(String deptName) {
         return deptDao.getDeptIdByDeptName(deptName);
     }
+
+    /**
+     * 跟新部门信息
+     * @param dept
+     */
+    @Override
+    public void updateDept(Dept dept) {
+        deptDao.updateDept(dept);
+    }
+
+    /**
+     * 根据部门编号来删除部门信息
+     * @param deptId
+     */
+    @Override
+    public void deleteDept(String deptId) {
+        deptDao.deleteDept(deptId);
+    }
+
+    /**
+     * 根据部门的编号来获得部门的信息
+     * @param deptId
+     * @return
+     */
+    @Override
+    public Dept getDeptById(String deptId) {
+        return deptDao.getDeptById(deptId);
+    }
+
+    @Override
+    public void addDept(Dept dept) {
+        deptDao.addDept(dept);
+    }
+
+    @Override
+    public boolean checkDeptIdIsExist(String deptId) {
+        return deptDao.checkDeptIdIsExist(deptId);
+    }
 }

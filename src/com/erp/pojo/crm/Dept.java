@@ -22,4 +22,12 @@ public class Dept {
     public void setDeptId(String deptId) {
         this.deptId = deptId;
     }
+
+    @Override
+    public String toString() {
+        return "Dept{" +
+                "deptId='" + deptId + '\'' +
+                ", deptname='" + deptname + '\'' +
+                '}';
+    }
 }
