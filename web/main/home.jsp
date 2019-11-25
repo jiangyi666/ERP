@@ -34,35 +34,7 @@
 </div>
 
 <iframe src="<%=basePath%>main/frame1.jsp" width="15%" height="600" frameborder="1"></iframe>
-<iframe src="<%=basePath%>main/frame2.jsp" marginheight="0" marginwidth="0" height="600" width="60%" frameborder="1"></iframe>
-<iframe src="<%=basePath%>main/frame3.jsp" marginheight="0" marginwidth="0" height="600" width="20%" frameborder="1"></iframe>
-<!--<div align="center">
-    <iframe src="frame4.jsp" width="70%" height="600" style="margin-top: 2px;margin-left: 4px;margin-right: 4px"
-            frameborder="1"></iframe>
-</div>-->
-<br>
-<br>
-<br>
-<br>
-<%--<div id="footer">--%>
-    <%--<font style="color: white;font-family: 仿宋" size="5">--%>
-        <%--<span class="glyphicon glyphicon-envelope"></span>--%>
-        <%--联系：<br>jy350@icloud.com--%>
-    <%--</font></b>--%>
-    <%--<div style="float: right">--%>
-        <%--<p><font color="black" style="font-family: 华文行楷" size="4"><span class="glyphicon glyphicon-share-alt"></span>--%>
-            <%--友情链接</font></p>--%>
-        <%--<p><a class="a1" href="http://www.fjnu.edu.cn/"><span class="glyphicon glyphicon-asterisk"></span> 福建师范大学网站</a>--%>
-        <%--</p>--%>
-        <%--<p><a class="a1" href="http://cpc.people.com.cn/"><span class="glyphicon glyphicon-asterisk"></span>人民网</a></p>--%>
-    <%--</div>--%>
-    <%--<div style="text-align: center">--%>
-        <%--<br><br><br><br>--%>
-        <%--<font color="black" style="font-family: 华文行楷" size="4">版权所有</font>--%>
-        <%--<span class="glyphicon glyphicon-copyright-mark"></span>--%>
-        <%--<font color="black" style="font-family: -apple-system" size="4">Designed By JiangYi In FJNU.2018</font>--%>
-    <%--</div>--%>
-
-<%--</div>--%>
+<iframe src="<%=basePath%>getAllEmployee.do" marginheight="0" marginwidth="0" height="600" width="80%" frameborder="0">
+</iframe>
 </body>
 </html>
