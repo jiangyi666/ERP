@@ -8,6 +8,7 @@ import java.io.IOException;
 @WebServlet(name = "loginServlet", urlPatterns = "/loginServlet.do")
 public class LoginServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+        System.out.println("访问登录！");
         String employeeId =request.getParameter("employeeId");
         String password = request.getParameter("password");
         LoginServiceImpl loginService = new LoginServiceImpl();

@@ -92,7 +92,7 @@
     <div class="row clearfix">
         <div class="col-md-12 column">
             <h3 class="text-center text-info">
-                职工列表 <a type="button" href="<%=basePath%>/toCreateEmp.do" class="btn btn-success" target="_blank">添加职工</a>
+                职工列表 <a type="button" href="<%=basePath%>toCreateEmp.do" class="btn btn-success" target="_blank">添加职工</a>
             </h3>
         </div>
     </div>
@@ -106,7 +106,7 @@
                     <tr>
                         <th>编号</th>
                         <th>姓名</th>
-                        <th>部门编号</th>
+                        <th>部门名称</th>
                         <th>职务</th>
                         <th>薪水</th>
                         <th>操作</th>

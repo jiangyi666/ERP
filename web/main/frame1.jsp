@@ -43,20 +43,20 @@
     <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span>  <a href="<%=basePath%>getAllEmployee.do" target="_blank" style="text-decoration: none">职工管理</a></div>
 </div>
 <div class="panel-warning" id="div2" hidden>
-    <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span> <a href="<%=basePath%>ReCourseServlet" target="_blank" style="text-decoration: none">产品管理</a></div>
+    <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span> <a href="<%=basePath%>pmg/product.jsp" target="_blank" style="text-decoration: none">产品管理</a></div>
 </div>
 <div class="panel-warning" id="div3" hidden>
     <%--<div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span> <a href="<%=basePath%>userServlet.do" target="_blank" style="text-decoration: none">成员管理</a></div>--%>
-        <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span> <a href="<%=basePath%>Manager" target="_blank" style="text-decoration: none">物料管理</a></div>
+        <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span> <a href="<%=basePath%>pmg/Material.jsp" target="_blank" style="text-decoration: none">物料管理</a></div>
 </div>
 <div class="panel-warning" id="div4" hidden>
-    <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span>  <a href="<%=basePath%>getTitles2.do" target="_blank" style="text-decoration: none">仓库管理</a></div>
+    <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span>  <a href="<%=basePath%>pmg/goodsLocation.jsp" target="_blank" style="text-decoration: none">仓库管理</a></div>
 </div>
 <div class="panel-warning" id="div5" hidden>
-    <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span>  <a href="<%=basePath%>getTitles2.do" target="_blank" style="text-decoration: none">客户管理</a></div>
+    <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span>  <a href="<%=basePath%>customerall" target="_blank" style="text-decoration: none">客户管理</a></div>
 </div>
 <div class="panel-warning" id="div6" hidden>
-    <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span>  <a href="<%=basePath%>getTitles2.do" target="_blank" style="text-decoration: none">供应商管理</a></div>
+    <div class="panel-heading"><span class="glyphicon glyphicon-menu-right"></span>  <a href="<%=basePath%>providerall" target="_blank" style="text-decoration: none">供应商管理</a></div>
 </div>
 <div class="list-group">
     <a href="#" class="list-group-item active">供销存</a>

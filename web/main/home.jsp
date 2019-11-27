@@ -27,7 +27,7 @@
         <ul class="nav nav-pills">
             <li role="presentation" class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a>
             </li>
-            <li role="presentation"><a href="/ueditor/main.jsp" target="_blank">消息</a></li>
+            <li role="presentation"><a href="#" target="_blank">消息</a></li>
             <li role="presentation"><a href="#">反馈</a></li>
         </ul>
     </div>
