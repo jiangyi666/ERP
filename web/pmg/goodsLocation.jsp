@@ -17,6 +17,8 @@
 
 <script type="text/javascript">
 
+	var allData;//所有数据
+	var currentBtn;//当前触发模态框按钮的id
 //在界面加载是就查村出所有物料资料
 $(document).ready(function(){
 	
@@ -27,6 +29,9 @@ $.ajax({
 		data:{"oper":"getAllGoodsLocation"},
 		success:function(data){
 			
+	
+			allData = data;
+			console.log(allData);
 			//表头渲染
 			var thead = "<tr>";
 			for(i=0;i<data[0].length;i++){
@@ -60,7 +65,7 @@ $.ajax({
 	function showUpdateGoodsLocationInfo(dataNode){
 			
 		var model_body = ""; 
-		
+		currentBtn = dataNode.id;
 		if(dataNode.id == "update"){
 			
 			var thead_tr = $("#thead")[0].childNodes[0];
@@ -100,8 +105,37 @@ $.ajax({
 		 $("#modal-body").html(model_body);
 		
 	}
-	
+	function isLegal(){
+		
+		console.log($("#modal-body")[0].childNodes[0].childNodes[0].innerHTML);
+		var str;
+		var inputId;
+		var regu = "^[ ]+$";
+		var re = new RegExp(regu);
+		 for(i=0;i<$("#modal-body")[0].childNodes.length;i+=2)
+		{
+			str = $("#modal-body")[0].childNodes[i].childNodes[1].value
+			  if(typeof str == "undefined" || str == null || str == "" || re.test(str)){
+				  inputId = $("#modal-body")[0].childNodes[i].childNodes[0].innerHTML;
+				  	alert(inputId+"不能为空！");
+			        return false;
+			    }
+		} 
+		 if(currentBtn != "update")
+			 for(i=0;i<allData.length;i++){
+				if($("#仓库编号")[0].value == allData[i].location){
+					alert("物料编号重复，添加失败！");
+					return false;
+				}
+			}
+		 
+		return true;
+	}
 	function submitGoodsLocationInfo(){
+		
+		if(!isLegal()){
+			return ;
+		}
 	
 		var oper = "";
 		if($("#submit")[0].value == "add"){

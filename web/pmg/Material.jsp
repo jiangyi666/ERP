@@ -18,7 +18,8 @@
 
 
 <script type="text/javascript">
-
+	var allData;
+	var currentBtn;
 	//在界面加载是就查村出所有物料资料
 	$(document).ready(function(){
 		
@@ -29,6 +30,7 @@
 			data:{"oper":"getAllMaterial"},
 			success:function(data){
 				
+				allData = data;
 				//表头渲染
 				var thead = "<tr>";
 				for(i=0;i<data[0].length;i++){
@@ -68,7 +70,7 @@
 	function showUpdateMaterialInfo(dataNode){
 			
 		var model_body = ""; 
-		
+		currentBtn = dataNode.id;
 		if(dataNode.id == "update"){
 			
 			var thead_tr = $("#thead")[0].childNodes[0];
@@ -108,8 +110,46 @@
 		 $("#modal-body").html(model_body);
 		
 	}
+	function isLegal(){
+		
+		console.log($("#modal-body")[0].childNodes[0].childNodes[0].innerHTML);
+		var str;
+		var inputId;
+		var regu = "^[ ]+$";
+		var re = new RegExp(regu);
+		 for(i=0;i<$("#modal-body")[0].childNodes.length;i+=2)
+		{
+			str = $("#modal-body")[0].childNodes[i].childNodes[1].value
+			  if(typeof str == "undefined" || str == null || str == "" || re.test(str)){
+				  inputId = $("#modal-body")[0].childNodes[i].childNodes[0].innerHTML;
+				  	alert(inputId+"不能为空！");
+			        return false;
+			    }
+		} 
+		 if(currentBtn != "update")
+		 for(i=0;i<allData.length;i++){
+			if($("#物料编号")[0].value == allData[i].matId){
+				alert("物料编号重复，添加失败！");
+				return false;
+			}
+		}
+		
+		if(!isNumber($("#克重")[0].value)){
+			alert("克重必须为数字！");
+			return false;
+		}
+		if(!isNumber($("#单价")[0].value)){
+			alert("单价必须为数字！");
+			return false;
+		} 
+		return true;
+	}
 	//提交模态框请求
 	function submitMaterialInfo(){
+		
+		if(!isLegal()){
+			return ;
+		}
 		
 		var oper = "";
 		if($("#submit")[0].value == "add"){
@@ -166,6 +206,15 @@
 		
 	}
 	
+	function isNumber(val) {
+	    var regPos = /^\d+(\.\d+)?$/; //非负浮点数
+	    var regNeg = /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/; //负浮点数
+	    if(regPos.test(val) || regNeg.test(val)) {
+	        return true;
+	        } else {
+	        return false;
+	        }
+	    }
 </script>
 
 </head>
