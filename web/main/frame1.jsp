@@ -62,11 +62,12 @@
     <a href="#" class="list-group-item active">供销存</a>
     <a href="#" class="list-group-item list-group-item-success"><span class="glyphicon glyphicon-tag"></span>
         物料进出仓管理</a>
-    <a href="#" class="list-group-item list-group-item-info"><span class="glyphicon glyphicon-tag"></span>库存管理</a>
-    <a href="#" class="list-group-item list-group-item-warning"><span
+    <a href="<%=basePath%>getAllProductStorageDetail.do" target="_blank" class="list-group-item list-group-item-info"><span class="glyphicon glyphicon-tag"></span>产品库存管理</a>
+    <a href="<%=basePath%>getAllMaterrielStorageDetail.do" target="_blank" class="list-group-item list-group-item-info"><span class="glyphicon glyphicon-tag"></span>物料库存管理</a>
+    <a href="#"target="_blank"  class="list-group-item list-group-item-warning"><span
             class="glyphicon glyphicon-tag"></span>订单管理</a>
-    <a href="#" class="list-group-item list-group-item-danger"><span class="glyphicon glyphicon-tag"></span>退货管理</a>
-    <a href="#" class="list-group-item list-group-item-danger"><span class="glyphicon glyphicon-tag"></span>采购管理</a>
+    <a href="#" target="_blank" class="list-group-item list-group-item-danger"><span class="glyphicon glyphicon-tag"></span>退货管理</a>
+    <a href="#" target="_blank" class="list-group-item list-group-item-danger"><span class="glyphicon glyphicon-tag"></span>采购管理</a>
 </div>
 
 </body>
