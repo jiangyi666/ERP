@@ -215,7 +215,7 @@ $(document).ready(function(){
 
 </head>
 <body>
-	<div style="text-align: center;background-color: gainsboro;margin-bottom:70px"><font style="text-align: center;color: black;font-size: xx-large"><b>纸业销售ERP系统</b></font></div>
+
 <center>
 	<div style="width:80%">
 		<table class="table table-bordered" style="text-align: center">

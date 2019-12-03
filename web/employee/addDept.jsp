@@ -46,7 +46,6 @@
     </script>
 </head>
 <body>
-<div style="text-align: center;background-color: gainsboro"><font style="text-align: center;color: black;font-size: xx-large"><b>纸业销售ERP系统</b></font></div>
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">

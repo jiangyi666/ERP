@@ -34,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  <div class="container-fluid">
 			    <!-- Brand and toggle get grouped for better mobile display -->
 			
-			      <div style="text-align: center;background-color: gainsboro"><font style="text-align: center;color: black;font-size: xx-large"><b>纸业销售ERP系统</b></font></div>
+
 
 	<div margin: 0 auto>
 		<div margin: 0 auto >

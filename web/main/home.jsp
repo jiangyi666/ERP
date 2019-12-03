@@ -34,7 +34,7 @@
 </div>
 
 <iframe src="<%=basePath%>main/frame1.jsp" width="15%" height="600" frameborder="1"></iframe>
-<iframe src="<%=basePath%>getAllEmployee.do" marginheight="0" marginwidth="0" height="600" width="80%" frameborder="0">
+<iframe src="<%=basePath%>getAllEmployee.do" name="main" marginheight="0" marginwidth="0" height="600" width="80%" frameborder="0">
 </iframe>
 </body>
 </html>
