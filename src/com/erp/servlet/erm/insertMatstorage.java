@@ -43,7 +43,7 @@ public class insertMatstorage extends HttpServlet {
 		System.out.println(date);		
 	
 		Timestamp date1=Timestamp.valueOf(date);
-		String inspectionStatus="Í¨¹ý";
+		String inspectionStatus="é€šè¿‡";
 		
 		
 		Materrielstorage mat=new Materrielstorage();

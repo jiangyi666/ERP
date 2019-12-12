@@ -1,15 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%@page import="com.erp.pojo.pm.employee"%>
-<%@page import="com.erp.pojo.pm.provider"%>
+
 <%@page import="java.util.List"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
-
-<%@ taglib prefix="for" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,6 +28,8 @@
 <%
 	String purchaseId= (String) request.getAttribute("purchaseId");
 	List<Map<String,Object>> list=(List)request.getAttribute("list");
+	List<String> liste=(List)request.getAttribute("liste");
+	List<String> listp=(List)request.getAttribute("listp");
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>|
@@ -43,7 +41,6 @@
     Map privilegeMap = (Map) request.getAttribute("privilegeMap");
     session.setAttribute("map", privilegeMap);*///把权限职务列表放进session中方便下面遍历
 %>
-
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="span12">
@@ -62,15 +59,15 @@
 					 <label>
 					 	采购员编号：<select class="form-control" id="employeeId" name="employeeId" style="width:150px">
                                 <option value="">--请选择--</option>
-                                <c:forEach items="${sessionScope.liste}" var="employee">
-                                    <option value="${employee.employeeId}">${employee.employeeId}</option>
+                                <c:forEach items="${liste}" var="employee">
+                                    <option value="${employee}">${employee}</option>
                                 </c:forEach>
                      	</select>
                      </label>
 					 <label>供应商编号：<select class="form-control" id="peeId" name="peeId" style="width:150px">
                                 <option value="">--请选择--</option>
-                                <c:forEach items="${sessionScope.listp}" var="provider">
-                                    <option value="${provider.peeId}">${provider.peeId}</option>
+                                <c:forEach items="${listp}" var="provider">
+                                    <option value="${provider}">${provider}</option>
                                 </c:forEach>
                      </select>
 					 </label>

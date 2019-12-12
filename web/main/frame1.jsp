@@ -68,8 +68,9 @@
     <a href="<%=basePath%>getAllMaterrielStorageDetail.do" target="main" class="list-group-item list-group-item-info"><span class="glyphicon glyphicon-tag"></span>物料库存管理</a>
     <a href="#"target="main"  class="list-group-item list-group-item-warning"><span
             class="glyphicon glyphicon-tag"></span>订单管理</a>
-    <a href="#" target="main" class="list-group-item list-group-item-danger"><span class="glyphicon glyphicon-tag"></span>退货管理</a>
+    <a href="<%=basePath%>ReturnServlet.do" target="main" class="list-group-item list-group-item-danger"><span class="glyphicon glyphicon-tag"></span>退货管理</a>
     <a href="<%=basePath%>purchaseorderservlet.do?pageItem=0" target="main" class="list-group-item list-group-item-danger"><span class="glyphicon glyphicon-tag"></span>采购管理</a>
+    <a href="<%=basePath%>DeliveryServlet" target="main" class="list-group-item list-group-item-danger"><span class="glyphicon glyphicon-tag"></span>物流管理</a>
 </div>
 
 </body>

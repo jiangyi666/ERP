@@ -113,7 +113,30 @@ public class JDBCUtil {
         return n;
     }
 
+    // 设置PreparedStatement并更新
+    public static int executeUpdate(PreparedStatement ps) {
+        try {
+            return ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeall(null, ps, null);
+        }
+        return -1;
+    }
 
+
+    // 设置PreparedStatement并查询
+    public static ResultSet query(PreparedStatement ps) {
+        try {
+            ResultSet rs = ps.executeQuery();
+            return rs;
+        } catch (Exception e) {
+            e.printStackTrace();
+            closeall(null, ps, null);
+        }
+        return null;
+    }
 
 
 

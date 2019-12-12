@@ -2,11 +2,14 @@ package com.erp.pojo.pacm;
 
 public class Customer {
 	private String customerId;	//�ͻ����
-	private String paasword;	//�ͻ�����
+	private String password;	//�ͻ�����
 	private String customerName;	//�ͻ�����
 	private String telephone;	//�ͻ��绰
-	
-	public Customer(String customerId,String customerName,String telephone){
+
+	public Customer() {
+	}
+
+	public Customer(String customerId, String customerName, String telephone){
 		this.customerId = customerId;
 		this.customerName = customerName;
 		this.telephone = telephone;
@@ -18,11 +21,11 @@ public class Customer {
 	public void setCustomerId(String customerId) {
 		this.customerId = customerId;
 	}
-	public String getPaasword() {
-		return paasword;
+	public String getPassword() {
+		return password;
 	}
-	public void setPaasword(String paasword) {
-		this.paasword = paasword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getCustomerName() {
 		return customerName;

@@ -6,6 +6,7 @@ import com.erp.service.pm.employeeservice;
 import com.erp.service.pm.providerservice;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 
 
 /**
@@ -38,15 +40,25 @@ public class selectservlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		List<employee> liste= employeeservice.getemployee();
-		List<provider> listp= providerservice.getprovider();
-		System.out.println(liste.get(1).getEmployeeId());
+		List<employee> oliste= employeeservice.getemployee();
+		List<provider> olistp= providerservice.getprovider();
 		String pageItem=request.getParameter("pageItem");
 		request.setAttribute("pageItem", pageItem);
-		HttpSession session = request.getSession();
-		session.setAttribute("liste", liste);
-		session.setAttribute("listp", listp);
-		request.getRequestDispatcher("/pm/addpurchaseorder.jsp").forward(request, response);
+		List<String> liste = new ArrayList<String>();
+	        for (employee object : oliste) {
+	            if (!liste.contains(object.getEmployeeId())) {
+	            	liste.add(object.getEmployeeId());
+	            }
+	        }
+	    List<String> listp = new ArrayList<String>();
+	        for (provider object : olistp) {
+	            if (!listp.contains(object.getPeeId())) {
+	            	listp.add(object.getPeeId());
+	            }
+	        }
+		request.setAttribute("liste", liste);
+		request.setAttribute("listp", listp);
+		request.getRequestDispatcher("pm/addpurchaseorder.jsp").forward(request, response);
 	}
 
 	/**
